@@ -14,7 +14,7 @@ const App = () => (
   <>
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="./">
           <img
             src={planetBlack}
             width="40"
@@ -28,7 +28,7 @@ const App = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end navbar-collapse">
-            <Link className="nav-link" to="/">Rockets</Link>
+            <Link className="nav-link" to="./">Rockets</Link>
             <RxDividerVertical className="react-icons" />
             <Link className="nav-link" to="/missionPage">Missions</Link>
             <RxDividerVertical className="react-icons" />
