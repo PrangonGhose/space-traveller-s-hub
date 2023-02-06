@@ -41,10 +41,10 @@ const App = () => (
     </Navbar>
 
     <Routes>
-      <Route path="/" element={<RocketPage />} />
-      <Route path="/missionPage" element={<MissionPage />} />
-      <Route path="/dragonPage" element={<DragonPage />} />
-      <Route path="/profilePage" element={<ProfilePage />} />
+      <Route path="/" exact element={<RocketPage />} />
+      <Route path="/missionPage" exact element={<MissionPage />} />
+      <Route path="/dragonPage" exact element={<DragonPage />} />
+      <Route path="/profilePage" exact element={<ProfilePage />} />
     </Routes>
   </>
 );
