@@ -28,8 +28,9 @@ const App = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end navbar-collapse">
-            <NavLink className="nav-link" to="/profilePage"> My Profile </NavLink>
+            <NavLink className="nav-link" to="/dragonPage">Dragons</NavLink>
             <RxDividerVertical className="react-icons" />
+            <NavLink className="nav-link" to="/profilePage">My Profile</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
