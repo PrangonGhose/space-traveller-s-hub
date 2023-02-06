@@ -24,8 +24,8 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <h1><b>Space Travellers Hub Web Application</b></h1>
   <img src="rocket.svg" alt="logo" width="220"  height="auto" />
+  <h1><b>Space Travellers Hub Web Application</b></h1>
 
 </div>
 
