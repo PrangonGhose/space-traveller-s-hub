@@ -1,10 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
 import missionReducer from './mission/mission';
 
 const rootReducer = {
   mission: missionReducer,
 };
 
-const store = configureStore({ reducer: rootReducer });
+const store = configureStore({ reducer: rootReducer }, applyMiddleware());
 
 export default store;
