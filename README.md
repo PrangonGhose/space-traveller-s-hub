@@ -25,10 +25,10 @@ After you're finished please remove all the comments and instructions!
 <div align="center">
 
   <h1><b>Space Travellers Hub Web Application</b></h1>
+  <img src="rocket.svg" alt="logo" width="180"  height="auto" />
 
 </div>
 
-<img src="rocket.svg" alt="logo" width="180"  height="auto" />
 
 <!-- TABLE OF CONTENTS -->
 
