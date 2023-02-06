@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import React from 'react';
 import { RxDividerVertical } from 'react-icons/rx';
 import Container from 'react-bootstrap/Container';
@@ -28,13 +28,8 @@ const App = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end navbar-collapse">
-            <Link className="nav-link" to="./">Rockets</Link>
+            <NavLink className="nav-link" to="/profilePage"> My Profile </NavLink>
             <RxDividerVertical className="react-icons" />
-            <Link className="nav-link" to="/missionPage">Missions</Link>
-            <RxDividerVertical className="react-icons" />
-            <Link className="nav-link" to="/dragonPage">Dragons</Link>
-            <RxDividerVertical className="react-icons" />
-            <Link className="nav-link" to="/profilePage">My Profile</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
