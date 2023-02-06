@@ -9,12 +9,11 @@ export const getMissionData = createAsyncThunk(GET_MISSION, async () => {
     {
       mission_name: mission.mission_name,
       mission_id: mission.mission_id,
-      description: mission.description
+      description: mission.description,
     }
-  )
-  )
+  ));
   return missionArray;
-})
+});
 
 const missionReducer = (state = [], action) => {
   switch (action.type) {
@@ -22,10 +21,10 @@ const missionReducer = (state = [], action) => {
       return [
         ...state,
         action.payload,
-      ]
+      ];
     default:
       return state;
   }
-}
+};
 
 export default missionReducer;
