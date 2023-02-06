@@ -28,6 +28,8 @@ After you're finished please remove all the comments and instructions!
 
 </div>
 
+<img src="rocket.svg" alt="logo" width="180"  height="auto" />
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
