@@ -14,7 +14,6 @@ const RocketsList = () => {
           } = rocket;
 
           return (
-
             <RocketItem
               key={id}
               id={id}
