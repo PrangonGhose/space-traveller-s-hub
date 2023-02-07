@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import MyProfileMissions from '../components/MyProfileMissions';
 
 const ProfilePage = () => {
+  // Logics for filtering and displaying joined missions
+
   const missionList = useSelector((state) => state.mission);
   const myMissions = missionList.filter((mission) => mission.member === true);
 
@@ -16,10 +18,10 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="profile-container">
+    <div className="container-fluid">
       <div className="mission-list">
-        <h1>My Missions</h1>
-        <table>
+        <h2>My Missions</h2>
+        <table className="table table-bordered table-hover">
           <tbody>
             {tableRow}
           </tbody>
