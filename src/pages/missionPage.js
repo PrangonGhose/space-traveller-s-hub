@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Mission from '../components/Mission';
@@ -34,7 +33,7 @@ const MissionPage = () => {
         </tbody>
       </table>
     </div>
-  )
+  );
 };
 
 export default MissionPage;
