@@ -1,11 +1,15 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateMember } from '../redux/mission/mission';
 
 const Mission = (props) => {
   const { mission } = props;
-  const { mission_id, mission_name, description, member } = mission;
+  const missionId = mission.mission_id;
+  const missionName = mission.mission_name;
+  const {
+    description, member,
+  } = mission;
   const dispatch = useDispatch();
   const [state, setState] = useState({
     member,
@@ -25,23 +29,23 @@ const Mission = (props) => {
         join: 'Leave Mission',
       });
     }
-  }, [member])
+  }, [member]);
 
   const handleClick = (id) => {
     dispatch(updateMember(id));
     setState({
       member: !state.member,
-    })
-  }
+    });
+  };
 
   return (
     <tr>
-      <td>{mission_name}</td>
+      <td>{missionName}</td>
       <td>{description}</td>
       <td>{state.text}</td>
-      <td><button type="button" className="mission-button" onClick={() => handleClick(mission_id)}>{state.join}</button></td>
+      <td><button type="button" className="mission-button" onClick={() => handleClick(missionId)}>{state.join}</button></td>
     </tr>
-  )
-}
+  );
+};
 
 export default Mission;
