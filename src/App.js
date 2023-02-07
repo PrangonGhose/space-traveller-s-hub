@@ -30,6 +30,8 @@ const App = () => (
           <Nav className="justify-content-end navbar-collapse">
             <NavLink className="nav-link" to="/">Rockets</NavLink>
             <RxDividerVertical className="react-icons" />
+            <NavLink className="nav-link" to="/missionPage">Missions</NavLink>
+            <RxDividerVertical className="react-icons" />
             <NavLink className="nav-link" to="/dragonPage">Dragons</NavLink>
             <RxDividerVertical className="react-icons" />
             <NavLink className="nav-link" to="/profilePage">My Profile</NavLink>
