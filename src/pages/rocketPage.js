@@ -1,10 +1,7 @@
-/* eslint-disable */
-import React from 'react';
+import RocketsList from '../Components/MyRockets/RocketsList';
 
-const RocketPage = () => {
-  return (
-    <h2>Hello Rockets</h2>
-  )
-};
+const Rockets = () => (
+  <RocketsList />
+);
 
-export default RocketPage;
+export default Rockets;
