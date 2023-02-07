@@ -1,15 +1,15 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 const MyProfileMissions = (props) => {
   const { missions } = props;
-  const { mission_name } = missions;
+  const missionName = missions.mission_name;
 
   return (
     <tr>
-      <td>{mission_name}</td>
+      <td>{missionName}</td>
     </tr>
-  )
-}
+  );
+};
 
 export default MyProfileMissions;
