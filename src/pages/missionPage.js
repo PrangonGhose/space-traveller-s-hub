@@ -12,8 +12,8 @@ const MissionPage = () => {
   }, [dispatch]);
 
   return (
-    <div className="all-missions">
-      <table className="mission-table">
+    <div className="container-fluid">
+      <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
             <th>Mission</th>

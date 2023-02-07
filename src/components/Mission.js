@@ -25,7 +25,7 @@ const Mission = (props) => {
       });
     } else {
       setState({
-        text: 'YOU ARE A MEMBER',
+        text: 'ACTIVE MEMBER',
         join: 'Leave Mission',
       });
     }
@@ -39,11 +39,11 @@ const Mission = (props) => {
   };
 
   return (
-    <tr>
-      <td>{missionName}</td>
+    <tr className="align-middle">
+      <td><strong>{missionName}</strong></td>
       <td>{description}</td>
-      <td>{state.text}</td>
-      <td><button type="button" className="mission-button" onClick={() => handleClick(missionId)}>{state.join}</button></td>
+      <td className={member ? 'badge text-bg-primary' : 'badge text-bg-secondary'} style={{ display: 'flex', justifyContent: 'center' }}>{state.text}</td>
+      <td><button type="button" className={member ? 'btn btn-outline-danger btn-sm' : 'btn btn-outline-primary btn-sm'} onClick={() => handleClick(missionId)}>{state.join}</button></td>
     </tr>
   );
 };
