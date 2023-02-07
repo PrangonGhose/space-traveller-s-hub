@@ -1,6 +1,6 @@
 import React from 'react';
 import useSelector from 'react-redux';
-import { RocketItem } from './rocketItem';
+import RocketItem from './rocketItem';
 
 const RocketsList = () => {
   const rockets = useSelector((state) => state.Rockets);

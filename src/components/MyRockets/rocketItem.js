@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { ReserveRocket } from '../../redux/Rocket/Rocket';
 
-export const RocketItem = (props) => {
+const RocketItem = (props) => {
   const {
     id, name, description, flickrImage, reserved,
   } = props;
