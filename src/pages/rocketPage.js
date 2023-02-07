@@ -1,4 +1,4 @@
-import RocketsList from '../Components/MyRockets/RocketsList';
+import RocketsList from '../components/MyRockets/rocketList';
 
 const Rockets = () => (
   <RocketsList />
