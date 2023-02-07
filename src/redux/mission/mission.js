@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { GET_MISSION, UPDATE_MEMBER } from '../constants';
+import { GET_MISSION, GET_STORAGE, UPDATE_MEMBER } from '../constants';
 
 export const getMissionData = createAsyncThunk(GET_MISSION, async () => {
   const url = 'https://api.spacexdata.com/v3/missions';
@@ -62,11 +62,28 @@ export const updateMember = (id) => {
   };
 };
 
-const missionReducer = (state = [], action) => {
+export const getLocalStorage = () => {
+  const tempData = localStorage.getItem('joins') || null;
+  let storageData;
+  // Parsing only data if present in localStorage
+  if (tempData) {
+    storageData = JSON.parse(tempData);
+  } else {
+    storageData = [];
+  }
+  return {
+    type: GET_STORAGE,
+    payload: storageData,
+  };
+};
+
+const missionReducer = (state = getLocalStorage().payload, action) => {
   switch (action.type) {
     case `${GET_MISSION}/fulfilled`:
       return action.payload;
     case UPDATE_MEMBER:
+      return action.payload;
+    case GET_STORAGE:
       return action.payload;
     default:
       return state;
