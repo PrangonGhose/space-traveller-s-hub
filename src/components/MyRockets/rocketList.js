@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import useSelector from 'react-redux';
-import { RocketItem } from './RocketItem';
+import { RocketItem } from './rocketItem';
 
 const RocketsList = () => {
   const rockets = useSelector((state) => state.Rockets);
