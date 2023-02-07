@@ -1,12 +1,12 @@
 import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
 import dragonReducer from './Dragon/Dragon';
 import missionReducer from './mission/mission';
-import rocketsReducer from './Rocket/Rocket';
+import RocketsReducer from './Rocket/Rocket';
 
 const rootReducer = {
   mission: missionReducer,
   dragon: dragonReducer,
-  rockets: rocketsReducer,
+  Rockets: RocketsReducer,
 };
 
 const store = configureStore({ reducer: rootReducer }, applyMiddleware());
