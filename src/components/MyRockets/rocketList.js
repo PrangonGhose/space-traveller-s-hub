@@ -12,7 +12,7 @@ const RocketsList = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <div className="container p-3">
       <ul className="listRockets" id="flex">
         {rockets.map((rocket) => {
           const {
