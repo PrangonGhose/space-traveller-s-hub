@@ -1,5 +1,7 @@
+import DragonList from '../components/Dragons/dragonList';
+
 const DragonPage = () => (
-  <h2>Hello Dragons</h2>
+  <DragonList />
 );
 
 export default DragonPage;

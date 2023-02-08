@@ -17,10 +17,13 @@ const DragonCard = (props) => {
   return (
     <div>
       <li>
-        <img src={flickrImage} alt="Dragon image" width="250" height="250" />
+        <img src={flickrImage} alt="Dragon 1" width="250" height="250" />
         <div>
           <h2>{name}</h2>
-          <h3>Type: {type}</h3>
+          <h3>
+            Type:
+            {type}
+          </h3>
           <div>
             <span className={reserved ? 'active' : 'inactive'}>
               reserved
@@ -42,5 +45,5 @@ DragonCard.propTypes = {
   type: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
-  flickrImage: PropTypes.array.isRequired,
+  flickrImage: PropTypes.string.isRequired,
 };

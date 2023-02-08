@@ -1,11 +1,11 @@
 import { Route, Routes, NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RxDividerVertical } from 'react-icons/rx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+
 import planetBlack from './images/planet-black.png';
 import RocketPage from './pages/rocketPage';
 import MissionPage from './pages/missionPage';
