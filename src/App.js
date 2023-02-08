@@ -4,17 +4,13 @@ import { RxDividerVertical } from 'react-icons/rx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useDispatch } from 'react-redux';
 import planetBlack from './images/planet-black.png';
 import RocketPage from './pages/rocketPage';
 import MissionPage from './pages/missionPage';
 import DragonPage from './pages/dragonPage';
 import ProfilePage from './pages/profilePage';
-import { getApiRockets } from './redux/Rocket/Rocket';
 
 function App() {
-  const dispatch = useDispatch();
-  dispatch(getApiRockets());
   return (
     <>
       <Navbar bg="light" expand="lg">
