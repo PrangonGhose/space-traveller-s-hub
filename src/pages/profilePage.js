@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import RocketProfile from '../components/RocketProfile';
 import MyProfileMissions from '../components/MyProfileMissions';
+import DragonProfile from '../components/DragonProfile';
 
 const ProfilePage = () => {
   // Logics for filtering and displaying reserved rockets
@@ -15,7 +16,7 @@ const ProfilePage = () => {
       <RocketProfile key={rocket.id} rockets={rocket} />
     ));
   } else {
-    rocketTable = <tr><td>You do not have any missions</td></tr>;
+    rocketTable = <tr><td>You do not have any rockets</td></tr>;
   }
 
   // Logics for filtering and displaying joined missions
@@ -33,6 +34,21 @@ const ProfilePage = () => {
     tableRow = <tr><td>You do not have any missions</td></tr>;
   }
 
+    // Logics for filtering and displaying reserved dragons
+
+    const dragonList = useSelector((state) => state.dragon);
+    const myDragons = dragonList.filter((dragon) => dragon.reserved === true);
+  
+    let dragonTable = [];
+  
+    if (myDragons.length !== 0) {
+      dragonTable = myDragons.map((dragon) => (
+        <DragonProfile key={dragon.id} dragons={dragon} />
+      ));
+    } else {
+      dragonTable = <tr><td>You do not have any dragons</td></tr>;
+    }
+
   return (
     <div className="container-fluid">
       <div className="rocket-list">
@@ -48,6 +64,14 @@ const ProfilePage = () => {
         <table className="table table-bordered table-hover">
           <tbody>
             {tableRow}
+          </tbody>
+        </table>
+      </div>
+      <div className="dragon-list">
+        <h2>My Dragons</h2>
+        <table className="table table-bordered table-hover">
+          <tbody>
+            {dragonTable}
           </tbody>
         </table>
       </div>
