@@ -42,7 +42,7 @@ const Mission = (props) => {
     <tr className="align-middle">
       <td><strong>{missionName}</strong></td>
       <td>{description}</td>
-      <td className={member ? 'badge text-bg-primary' : 'badge text-bg-secondary'} style={{ display: 'flex', justifyContent: 'center' }}>{state.text}</td>
+      <td><div className={member ? 'badge text-bg-primary' : 'badge text-bg-secondary'} style={{ display: 'flex', justifyContent: 'center' }}>{state.text}</div></td>
       <td><button type="button" className={member ? 'btn btn-outline-danger btn-sm' : 'btn btn-outline-primary btn-sm'} onClick={() => handleClick(missionId)}>{state.join}</button></td>
     </tr>
   );

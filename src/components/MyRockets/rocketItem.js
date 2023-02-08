@@ -16,12 +16,12 @@ const RocketItem = (props) => {
 
   return (
     <div>
-      <li>
-        <img src={flickrImage} alt="Girl in a jacket" width="250" height="250" />
-        <div>
+      <li className="rockets" id="flex">
+        <img className="img" src={flickrImage} alt="rockets" width="280" height="250" />
+        <div className="justifyRocket" id="flex">
           <h2>{name}</h2>
-          <div>
-            <span className={reserved ? 'active' : 'inactive'}>
+          <div id="flex">
+            <span className={reserved ? 'active1' : 'inactive'}>
               reserved
             </span>
             <p>{description}</p>
