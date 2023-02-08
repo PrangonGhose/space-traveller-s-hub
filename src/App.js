@@ -1,26 +1,17 @@
 import { Route, Routes, NavLink } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { RxDividerVertical } from 'react-icons/rx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useDispatch } from 'react-redux';
 
 import planetBlack from './images/planet-black.png';
 import RocketPage from './pages/rocketPage';
 import MissionPage from './pages/missionPage';
 import DragonPage from './pages/dragonPage';
 import ProfilePage from './pages/profilePage';
-import { getApiRockets } from './redux/Rocket/Rocket';
-import { getDragonApi } from './redux/Dragon/Dragon';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getApiRockets());
-    dispatch(getDragonApi());
-  }, [dispatch]);
-
   return (
     <>
       <Navbar bg="light" expand="lg">

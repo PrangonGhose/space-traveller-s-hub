@@ -1,31 +1,35 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getDragonApi } from '../../redux/Dragon/Dragon';
 import DragonCard from './dragonCard';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragon);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDragonApi());
+  }, [dispatch]);
 
   return (
     <div className="container">
-      <ul className="rocketlist" id="flex">
-        {dragons.map((dragon) => {
-          const {
-            id, name, type, description, flickrImage, reserved,
-          } = dragon;
+      {dragons.map((dragon) => {
+        const {
+          id, name, type, description, flickrImage, reserved,
+        } = dragon;
 
-          return (
-            <DragonCard
-              key={id}
-              id={id}
-              name={name}
-              type={type}
-              description={description}
-              flickrImage={flickrImage}
-              reserved={reserved}
-            />
-          );
-        })}
-      </ul>
+        return (
+          <DragonCard
+            key={id}
+            id={id}
+            name={name}
+            type={type}
+            description={description}
+            flickrImage={flickrImage}
+            reserved={reserved}
+          />
+        );
+      })}
     </div>
   );
 };
