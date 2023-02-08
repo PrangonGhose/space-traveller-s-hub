@@ -5,16 +5,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import planetBlack from './images/planet-black.png';
 import RocketPage from './pages/rocketPage';
 import MissionPage from './pages/missionPage';
 import DragonPage from './pages/dragonPage';
 import ProfilePage from './pages/profilePage';
 import { getApiRockets } from './redux/Rocket/Rocket';
+import { getDragonApi } from './redux/Dragon/Dragon';
 
 function App() {
   const dispatch = useDispatch();
-  dispatch(getApiRockets());
+  useEffect(() => {
+    dispatch(getApiRockets());
+    dispatch(getDragonApi());
+  }, [dispatch]);
+
   return (
     <>
       <Navbar bg="light" expand="lg">

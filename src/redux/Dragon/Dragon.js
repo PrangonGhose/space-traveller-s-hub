@@ -13,7 +13,7 @@ const getDragonApi = createAsyncThunk(GET_DATA,
         name: dragon.name,
         type: dragon.type,
         description: dragon.description,
-        flickrImage: dragon.flickr_image,
+        flickrImage: dragon.flickr_images,
         reserved: false,
       }
     ));
