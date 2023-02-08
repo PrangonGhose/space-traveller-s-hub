@@ -1,21 +1,15 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-// const RocketProfile = (props) => {
-//   const {
-//     name,
-//   } = props;
+const RocketProfile = (props) => {
+  const { rockets } = props;
+  const rocketName = rockets.name;
 
-//   return (
-//     <li>
-//       <h2>{name}</h2>
-//     </li>
+  return (
+    <tr>
+      <td>{rocketName}</td>
+    </tr>
+  );
+};
 
-//   );
-// };
-
-// export default RocketProfile;
-
-// RocketProfile.propTypes = {
-//   name: PropTypes.string.isRequired,
-// };
+export default RocketProfile;
