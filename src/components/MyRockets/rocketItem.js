@@ -21,9 +21,11 @@ const RocketItem = (props) => {
         <div className="justifyRocket" id="flex">
           <h2>{name}</h2>
           <div id="flex">
-            <span className={reserved ? 'active1' : 'inactive'}>
-              reserved
-            </span>
+            <div>
+              <span className={reserved ? 'active1 d-grid align-content-center' : 'inactive'}>
+                Reserved
+              </span>
+            </div>
             <p>{description}</p>
           </div>
           <button type="button" id={id} onClick={onClick} className={reserved ? 'reserve' : 'cancel'}>{reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</button>
@@ -39,6 +41,6 @@ RocketItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  reserved: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
   flickrImage: PropTypes.string.isRequired,
 };

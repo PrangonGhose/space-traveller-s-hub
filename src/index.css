@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 #flex {
   display: flex;
-}
-
-.container {
-  padding-left: 10px;
-  padding-right: 15px;
-  padding-top: 25px;
-  padding-bottom: 10px;
 }
 
 .listRockets {
@@ -55,6 +50,10 @@
   text-align: center;
   padding: 5px 5px 8px 5px;
   border-radius: 6px;
+}
+
+.active {
+  text-decoration: underline;
 }
 
 .active1 {
