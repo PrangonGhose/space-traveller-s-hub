@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/space-traveller-s-hub/static/css/main.74a57515.css",
+    "main.js": "/space-traveller-s-hub/static/js/main.066f8854.js",
+    "static/media/planet-black.png": "/space-traveller-s-hub/static/media/planet-black.a192452ed6e8f0cc2799.png",
+    "index.html": "/space-traveller-s-hub/index.html",
+    "main.74a57515.css.map": "/space-traveller-s-hub/static/css/main.74a57515.css.map",
+    "main.066f8854.js.map": "/space-traveller-s-hub/static/js/main.066f8854.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74a57515.css",
+    "static/js/main.066f8854.js"
+  ]
+}
