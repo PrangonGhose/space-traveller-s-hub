@@ -1,11 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { ROCKET_RESERVE, OBTAIN_DATA, GET_STORAGE } from '../constants';
 
 const urlRockets = 'https://api.spacexdata.com/v4/rockets';
 
 export const getApiRockets = createAsyncThunk(OBTAIN_DATA,
-  () => axios.get(urlRockets).then((response) => {
+  () => fetch(urlRockets).then((response) => {
     const tempData = localStorage.getItem('rockets') || null;
     let storageData;
     // Parsing only data if present in localStorage
