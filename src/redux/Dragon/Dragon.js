@@ -4,7 +4,9 @@ import { GET_DATA, RESERVE_DRAGON, GET_STORAGE } from '../constants';
 const dragonUrl = 'https://api.spacexdata.com/v4/dragons';
 
 const getDragonApi = createAsyncThunk(GET_DATA,
-  () => fetch(dragonUrl).then((resp) => {
+  async () => {
+    const response = await fetch(dragonUrl);
+    const data = await response.json();
     const tempData = localStorage.getItem('dragons') || null;
     let storageData;
     if (tempData) {
@@ -13,16 +15,16 @@ const getDragonApi = createAsyncThunk(GET_DATA,
       storageData = [];
     }
     const dragonsArr = [];
-    for (let i = 0; i < resp.data.length; i += 1) {
+    for (let i = 0; i < data.length; i += 1) {
       if (storageData.length !== 0) {
         for (let j = 0; j < storageData.length; j += 1) {
-          if (storageData[j].id === resp.data[i].id) {
+          if (storageData[j].id === data[i].id) {
             const obj = {
-              id: resp.data[i].id,
-              name: resp.data[i].name,
-              type: resp.data[i].type,
-              description: resp.data[i].description,
-              flickrImage: resp.data[i].flickr_images[0],
+              id: data[i].id,
+              name: data[i].name,
+              type: data[i].type,
+              description: data[i].description,
+              flickrImage: data[i].flickr_images[0],
               reserved: storageData[j].reserved,
             };
             dragonsArr.push(obj);
@@ -31,11 +33,11 @@ const getDragonApi = createAsyncThunk(GET_DATA,
         }
       } else {
         const obj = {
-          id: resp.data[i].id,
-          name: resp.data[i].name,
-          type: resp.data[i].type,
-          description: resp.data[i].description,
-          flickrImage: resp.data[i].flickr_images[0],
+          id: data[i].id,
+          name: data[i].name,
+          type: data[i].type,
+          description: data[i].description,
+          flickrImage: data[i].flickr_images[0],
           reserved: false,
         };
         dragonsArr.push(obj);
@@ -47,7 +49,7 @@ const getDragonApi = createAsyncThunk(GET_DATA,
     }
 
     return dragonsArr;
-  }));
+  });
 
 const reserveDragon = (id) => {
   let tempData = localStorage.getItem('dragons');

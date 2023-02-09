@@ -3,50 +3,51 @@ import { ROCKET_RESERVE, OBTAIN_DATA, GET_STORAGE } from '../constants';
 
 const urlRockets = 'https://api.spacexdata.com/v4/rockets';
 
-export const getApiRockets = createAsyncThunk(OBTAIN_DATA,
-  () => fetch(urlRockets).then((response) => {
-    const tempData = localStorage.getItem('rockets') || null;
-    let storageData;
-    // Parsing only data if present in localStorage
-    if (tempData) {
-      storageData = JSON.parse(tempData);
-    } else {
-      storageData = [];
-    }
-    const rocketsArr = [];
-    for (let i = 0; i < response.data.length; i += 1) {
-      if (storageData.length !== 0) {
-        for (let j = 0; j < storageData.length; j += 1) {
-          if (storageData[j].id === response.data[i].id) {
-            const obj = {
-              id: response.data[i].id,
-              name: response.data[i].name,
-              description: response.data[i].description,
-              flickrImage: response.data[i].flickr_images[0],
-              reserved: storageData[j].reserved,
-            };
-            rocketsArr.push(obj);
-            break;
-          }
+export const getApiRockets = createAsyncThunk(OBTAIN_DATA, async () => {
+  const response = await fetch(urlRockets);
+  const data = await response.json();
+  const tempData = localStorage.getItem('rockets') || null;
+  let storageData;
+  // Parsing only data if present in localStorage
+  if (tempData) {
+    storageData = JSON.parse(tempData);
+  } else {
+    storageData = [];
+  }
+  const rocketsArr = [];
+  for (let i = 0; i < data.length; i += 1) {
+    if (storageData.length !== 0) {
+      for (let j = 0; j < storageData.length; j += 1) {
+        if (storageData[j].id === data[i].id) {
+          const obj = {
+            id: data[i].id,
+            name: data[i].name,
+            description: data[i].description,
+            flickrImage: data[i].flickr_images[0],
+            reserved: storageData[j].reserved,
+          };
+          rocketsArr.push(obj);
+          break;
         }
-      } else {
-        const obj = {
-          id: response.data[i].id,
-          name: response.data[i].name,
-          description: response.data[i].description,
-          flickrImage: response.data[i].flickr_images[0],
-          reserved: false,
-        };
-        rocketsArr.push(obj);
       }
+    } else {
+      const obj = {
+        id: data[i].id,
+        name: data[i].name,
+        description: data[i].description,
+        flickrImage: data[i].flickr_images[0],
+        reserved: false,
+      };
+      rocketsArr.push(obj);
     }
-    if (!tempData) {
-      const temp = JSON.stringify(rocketsArr);
-      localStorage.setItem('rockets', temp);
-    }
+  }
+  if (!tempData) {
+    const temp = JSON.stringify(rocketsArr);
+    localStorage.setItem('rockets', temp);
+  }
 
-    return rocketsArr;
-  }));
+  return rocketsArr;
+});
 
 export const ReserveRocket = (id) => {
   let tempData = localStorage.getItem('rockets');
