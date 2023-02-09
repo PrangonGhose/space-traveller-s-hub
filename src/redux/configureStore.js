@@ -1,4 +1,4 @@
-import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import dragonReducer from './Dragon/Dragon';
 import missionReducer from './mission/mission';
 import RocketsReducer from './Rocket/Rocket';
@@ -9,6 +9,6 @@ const rootReducer = {
   Rockets: RocketsReducer,
 };
 
-const store = configureStore({ reducer: rootReducer }, applyMiddleware());
+const store = configureStore({ reducer: rootReducer });
 
 export default store;
