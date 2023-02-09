@@ -34,20 +34,20 @@ const ProfilePage = () => {
     tableRow = <tr><td>You do not have any missions</td></tr>;
   }
 
-    // Logics for filtering and displaying reserved dragons
+  // Logics for filtering and displaying reserved dragons
 
-    const dragonList = useSelector((state) => state.dragon);
-    const myDragons = dragonList.filter((dragon) => dragon.reserved === true);
-  
-    let dragonTable = [];
-  
-    if (myDragons.length !== 0) {
-      dragonTable = myDragons.map((dragon) => (
-        <DragonProfile key={dragon.id} dragons={dragon} />
-      ));
-    } else {
-      dragonTable = <tr><td>You do not have any dragons</td></tr>;
-    }
+  const dragonList = useSelector((state) => state.dragon);
+  const myDragons = dragonList.filter((dragon) => dragon.reserved === true);
+
+  let dragonTable = [];
+
+  if (myDragons.length !== 0) {
+    dragonTable = myDragons.map((dragon) => (
+      <DragonProfile key={dragon.id} dragons={dragon} />
+    ));
+  } else {
+    dragonTable = <tr><td>You do not have any dragons</td></tr>;
+  }
 
   return (
     <div className="container-fluid">

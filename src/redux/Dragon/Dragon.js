@@ -8,7 +8,7 @@ const getDragonApi = createAsyncThunk(GET_DATA,
   () => axios.get(dragonUrl).then((resp) => {
     const tempData = localStorage.getItem('dragons') || null;
     let storageData;
-    if(tempData) {
+    if (tempData) {
       storageData = JSON.parse(tempData);
     } else {
       storageData = [];
@@ -66,7 +66,7 @@ const reserveDragon = (id) => {
   };
 };
 
-const getLocalStorage = () => {
+export const getLocalStorage = () => {
   const tempData = localStorage.getItem('dragons') || null;
   let storageData;
   if (tempData) {
@@ -99,5 +99,5 @@ const dragonReducer = (state = getLocalStorage().payload, action) => {
   }
 };
 
-export { getDragonApi, reserveDragon, getLocalStorage };
+export { getDragonApi, reserveDragon };
 export default dragonReducer;
