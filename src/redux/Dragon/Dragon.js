@@ -1,11 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { GET_DATA, RESERVE_DRAGON, GET_STORAGE } from '../constants';
 
 const dragonUrl = 'https://api.spacexdata.com/v4/dragons';
 
 const getDragonApi = createAsyncThunk(GET_DATA,
-  () => axios.get(dragonUrl).then((resp) => {
+  () => fetch(dragonUrl).then((resp) => {
     const tempData = localStorage.getItem('dragons') || null;
     let storageData;
     if (tempData) {
