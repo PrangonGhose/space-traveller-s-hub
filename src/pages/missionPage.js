@@ -26,7 +26,10 @@ const MissionPage = () => {
             missionList.map((mission) => (
               <Mission
                 key={mission.mission_id}
-                mission={mission}
+                missionId={mission.mission_id}
+                missionName={mission.mission_name}
+                description={mission.description}
+                member={mission.member}
               />
             ))
           }

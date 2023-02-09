@@ -59,10 +59,18 @@ const DragonCard = (props) => {
 export default DragonCard;
 
 DragonCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
-  flickrImage: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  description: PropTypes.string,
+  reserved: PropTypes.bool,
+  flickrImage: PropTypes.string,
+};
+DragonCard.defaultProps = {
+  id: '',
+  name: '',
+  type: '',
+  description: '',
+  reserved: false,
+  flickrImage: '',
 };

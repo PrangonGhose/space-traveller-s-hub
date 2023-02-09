@@ -13,7 +13,7 @@ const ProfilePage = () => {
 
   if (myRockets.length !== 0) {
     rocketTable = myRockets.map((rocket) => (
-      <RocketProfile key={rocket.id} rockets={rocket} />
+      <RocketProfile key={rocket.id} rockets={rocket.name} />
     ));
   } else {
     rocketTable = <tr><td>You do not have any rockets</td></tr>;
@@ -28,7 +28,7 @@ const ProfilePage = () => {
 
   if (myMissions.length !== 0) {
     tableRow = myMissions.map((mission) => (
-      <MyProfileMissions key={mission.mission_id} missions={mission} />
+      <MyProfileMissions key={mission.mission_id} missions={mission.mission_name} />
     ));
   } else {
     tableRow = <tr><td>You do not have any missions</td></tr>;
@@ -43,7 +43,7 @@ const ProfilePage = () => {
 
   if (myDragons.length !== 0) {
     dragonTable = myDragons.map((dragon) => (
-      <DragonProfile key={dragon.id} dragons={dragon} />
+      <DragonProfile key={dragon.id} dragons={dragon.name} />
     ));
   } else {
     dragonTable = <tr><td>You do not have any dragons</td></tr>;

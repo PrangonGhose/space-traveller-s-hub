@@ -3,11 +3,10 @@ import React from 'react';
 
 const RocketProfile = (props) => {
   const { rockets } = props;
-  const rocketName = rockets.name;
 
   return (
     <tr>
-      <td>{rocketName}</td>
+      <td>{rockets}</td>
     </tr>
   );
 };

@@ -1,15 +1,12 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { updateMember } from '../redux/mission/mission';
 
 const Mission = (props) => {
-  const { mission } = props;
-  const missionId = mission.mission_id;
-  const missionName = mission.mission_name;
   const {
-    description, member,
-  } = mission;
+    missionId, missionName, description, member,
+  } = props;
   const dispatch = useDispatch();
   const [state, setState] = useState({
     member,
@@ -49,3 +46,16 @@ const Mission = (props) => {
 };
 
 export default Mission;
+
+Mission.propTypes = {
+  missionId: PropTypes.string,
+  missionName: PropTypes.string,
+  description: PropTypes.string,
+  member: PropTypes.bool,
+};
+Mission.defaultProps = {
+  missionId: '',
+  missionName: '',
+  description: '',
+  member: false,
+};
