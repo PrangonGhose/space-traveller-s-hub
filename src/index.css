@@ -98,3 +98,10 @@
     height: 200px;
   }
 }
+
+@media (max-width: 375px) {
+  .img {
+    width: 140px;
+    height: 140px;
+  }
+}
